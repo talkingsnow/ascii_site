@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Ascii галерея{% endblock title %}
+{% block content%}
+    <ul>
+        {% for pic in db_image %}
+            <li><img src="{{MEDIA_URL}}{{pic.image.url}}" alt="{{ pic.image }}"></li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

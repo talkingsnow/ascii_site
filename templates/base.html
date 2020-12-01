@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ascii сайт{% endblock title %}</title>
+</head>
+<body>
+    <div>
+        <a href="/">Ascii рисование</a>
+        <a href="/gallery">Ascii галерея</a>
+    </div>
+    <div>{% block content%}{% endblock content %}</div>
+    <div>
+        <p>Все права защищены болтом, который на них положен</p>
+    </div>
+</body>
+</html>
