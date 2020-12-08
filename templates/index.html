@@ -1,22 +1,12 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Ascii рисование</title>
-</head>
-<body>
+{% block title %}Ascii сайт{% endblock title %}
+{% block content%}
     <form method="POST"  action = "create/" enctype="multipart/form-data">
         {% csrf_token %}
         <table>{{ form }}</table>
         <p><input type="submit" value="Обработать" ></p>
     </form>
-    <ul>
-        {% for pic in db_image %}
-            <li>{{ pic.image }}</li>
-        {% endfor %}
-    </ul>
     {{ script }}
     <img src="{% static 'bmp_2_wallpaper.jpg' %}">
-</body>
-</html>
+{% endblock content %}

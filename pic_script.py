@@ -24,6 +24,7 @@ def res_pic(image):
                 else:
                     writer.write('  ')
             writer.write('\n')
+
     except:
         return "Изображение не получено, но не грусти, вот тебе БМП-2"
 
