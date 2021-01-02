@@ -2,11 +2,13 @@
 {% load static %}
 {% block title %}Ascii галерея{% endblock title %}
 {% block content%}
-    #<img src="{{MEDIA_URL}}{{fate}}{{image.url}}" alt="{{ db_image.image }}">
+    <ul>
+        <li><img src="{{db_image.0.image.url}}" alt="{{ k.image }}"></li>
+    </ul>
     <ul>
         {% for pic in db_image %}
             <li>{{pic}}</li>
-            <li><img src="{{MEDIA_URL}}{{pic.image.url}}" alt="{{ pic.image }}"></li>
+            <li><img src="{{pic.image.url}}" alt="{{ pic.image }}"></li>
         {% endfor %}
     </ul>
 {% endblock content %}
