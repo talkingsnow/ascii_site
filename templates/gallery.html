@@ -3,12 +3,13 @@
 {% block title %}Ascii галерея{% endblock title %}
 {% block content%}
     <ul>
+        <h3>Обложка коммита:</h3>
         <li><img src="{{db_image.0.image.url}}" alt="{{ k.image }}"></li>
     </ul>
-    <ul>
+        <h3>Фотоархив</h3>
+    <table>
         {% for pic in db_image %}
-            <li>{{pic}}</li>
-            <li><img src="{{pic.image.url}}" alt="{{ pic.image }}"></li>
+            <tr><img src="{{pic.image.url}}" alt="{{ pic.image }}"></tr>
         {% endfor %}
-    </ul>
+    </table>
 {% endblock content %}

@@ -4,8 +4,8 @@ from PIL import Image as img
 
 def res_pic(image):
     final_list=""
-    image
-    #writer = open('writer_result.txt', 'w')
+    image = img.open(image)
+    image.show()
     try:
         image = image.convert('L')
     except:
