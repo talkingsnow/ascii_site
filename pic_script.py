@@ -1,11 +1,12 @@
 import numpy as np
 from PIL import Image as img
+import os
 
 
 def res_pic(image):
     final_list=""
     image = img.open(image)
-    image.show()
+    writer = open("static/writer.txt", "w")
     try:
         image = image.convert('L')
     except:
@@ -23,17 +24,13 @@ def res_pic(image):
     except:
         return "Не узнаёт размер"
     try:
-        img_sr = round(img_array.mean())
-    except:
-        return "Не округляет"
-    try:
         for k in range(ar_width):
             for j in range(ar_height):
-                if img_array[k, j] > round(img_sr * 1, 5):
+                if img_array[k, j] >= 192: #round(img_sr * 1, 5):
                     final_list+=('&&')
-                elif img_array[k, j] > img_sr:
+                elif img_array[k, j] >= 128: #img_sr:
                     final_list+=('||')
-                elif img_array[k, j] > img_sr / 2:
+                elif img_array[k, j] >= 64: #img_sr / 2:
                     final_list+=('__')
                 else:
                     final_list+=('  ')
@@ -41,6 +38,6 @@ def res_pic(image):
     except:
         return "Цикл не работает"
     try:
-        return final_list
+        writer.write(final_list)
     except:
-        return "Не пишет"
+        return "Нет записи"

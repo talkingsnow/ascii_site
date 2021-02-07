@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Ascii сайт{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
     <div>
@@ -10,7 +12,7 @@
         <a href="/gallery">Ascii галерея</a>
     </div>
     <div>{% block content%}{% endblock content %}</div>
-    <div>
+    <div class = "bolt">
         <p>Все права защищены болтом, который на них положен</p>
     </div>
 </body>

@@ -1,0 +1,11 @@
+label, ul {
+    position: fixed;
+    right: 5px;
+    visibility: hidden;
+    }
+
+table {
+    position: relative;
+    top: 8px;
+    right: 7px;
+    }
